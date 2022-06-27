@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Muli,sans-serif;
+    background-color: #f7f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.switch
+    {
+    width: 50px;
+    height: 30px;
+    position: relative;
+    display:inline-block;
+    top: -10px;
+    left: 200px;
+}
+@media (max-width: 676px){
+    .switch {
+        left: 90px;
+    }
+}
+.switch input {
+    display: none;
+}
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 30px;
+}
+.slider span:first-of-type {
+    left: -75px;
+    position: relative;
+    top: 5px;
+    color: #c5c8f3;
+}
+
+.slider span:last-of-type {
+    position: relative;
+    top: 5px;
+    right: 1px;
+    color: #c5c8f3;
+}
+.slider:before {
+    position: absolute;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    content: "";
+    left: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    transition: ease-in-out .5s;
+}
+.slider:after {
+    content: "";
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 70%;
+    transition: all .5s;
+    font-size: 10px;
+    font-family: Verdana,sans-serif;
+}
+input:checked + .slider:after {
+    transition: all .5s;
+    left: 30%;
+    content: "";
+}
+input:checked + .slider {
+    background-color: #9195ec;
+}
+input:checked + .slider:before {
+    transform: translateX(21px);
+}
+/* .switch
+{
+        width:90px
+} */
+.slider:after
+{
+     left: 60%;
+}
+input:checked + .slider:after
+{
+    left:40%; 
+}
+
+input:checked + .slider:before
+{
+    transform: translateX(21px);
+}
+.backgr-img svg:first-of-type {
+    top: 0;
+    right: 0;
+    position: fixed;
+    width: 250px;
+    z-index: -999;
+}
+.backgr-img svg:last-of-type {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 250px;
+    z-index: -999;
+}
+.container {
+    margin: 20px auto;
+}
+ul {
+    list-style: none;
+}
+.header-title h2 {
+    color: #6d7091;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.box-prices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* .box.basic {
+    background-color: white;
+    text-align: center;
+} */
+.box.basic h4, .box.master {
+    color: #474c62;
+    padding-bottom: 15px;
+}
+.box-prices .box.basic ul li, 
+.box-prices .box.master ul li {
+    border-bottom: 1px solid #dddddd;
+}
+.box-prices .box.pro ul li {
+    border-bottom: 1px solid #dddddd;
+}
+.box.basic ul li:first-child, 
+.box.master ul li:first-child {
+    border-top: 1px solid #dddddd;
+}
+.box-prices .box.pro ul li:first-child {
+    border-top: 1px solid #dddddd;
+}
+.box-prices .box {
+    width: 300px;
+    height: 410px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 1px 3px 8px #01010166;
+    border-radius: 10px;
+}
+@media (max-width: 676px) {
+    .box-prices .box {
+        margin: 0 auto 30px;
+    }
+}
+.box-prices .box:first-child {
+    /* margin-top: 15px;
+    margin-bottom: 15px; */
+}
+.box-prices .box.pro {
+    background-color: #9195ec;
+    height: 430px;
+    top: -11px;
+    padding: 18px;
+    width: 290px;
+    position: relative;
+}
+.box-prices .box.basic, 
+.box-prices .box.pro,
+.box-prices .box.master {
+    text-align: center;
+}
+.box-prices .box.basic ul li,
+.box-prices .box.pro ul li,
+.box-prices .box.master ul li {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.box-prices .box.basic h4,
+.box-prices .box.pro h4,
+.box-prices .box.master h4 {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-size: 13px;
+}
+.box-prices .box.basic h2,
+.box-prices .box.pro h2,
+.box-prices .box.master h2 {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-size: 50px;
+}
+.box-prices .box.box.basic h2,
+.box-prices .box.box.basic h4{
+    color: #474c62;
+}
+.box-prices .box.pro h2,
+.box-prices .box.pro h4{
+    color: white;
+}
+.box-prices .box.box.master h2,
+.box-prices .box.box.master h4{
+    color: #474c62;
+}
+.box-prices .box.basic h2::before,
+.box-prices .box.master h2::before {
+    content: "$";
+    position: relative;
+    font-size: 27px;
+    top: -9px;
+    margin-right: 2px;
+    font-weight: bold;
+}
+.box-prices .box.pro h2::before {
+    content: "$";
+    position: relative;
+    font-size: 27px;
+    top: -9px;
+    margin-right: 2px;
+    font-weight: bold;
+    color: white;
+}
+.box-prices .box.basic button,
+.box-prices .box.pro button,
+.box-prices .box.master button {
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 0;
+    width: 230px;
+    background-color: white;
+    font-size: 11px;
+    transition: 0.3s ease;
+}
+.box-prices .box.basic button,
+.box-prices .box.master button {
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 0;
+    width: 230px;
+    background-color: #7276e1;
+    color: white;
+    font-size: 11px;
+    transition: 0.3s ease;
+}
+.box-prices .box.basic button:hover,
+.box-prices .box.master button:hover {
+    background-color: white;
+    color: #7276e1;
+    border: 1px solid #7276e1;
+    outline: 0;
+    cursor: pointer;
+}
+.box-prices .box.pro ul li {
+    color: white;
+}
+.box-prices .box.pro button {
+    color: #7276e1;
+}
+.box-prices .box.pro button:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    outline: 0;
+    cursor: pointer;
+}
